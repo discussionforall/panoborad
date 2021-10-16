@@ -2,9 +2,12 @@
   "name": "panoboard-panel",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "dev": "cross-env env-cmd -f ./.env.development react-scripts start",
-    "build": "env-cmd -f ./.env.production react-scripts build",
+    "dev": "node api.js && cross-env env-cmd -f ./.env.development react-scripts start",
+    "build": "node api.js && env-cmd -f ./.env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.ts' './src/**/*.js' './src/**/*.tsx' --max-warnings=0  --ignore-path .gitignore"
